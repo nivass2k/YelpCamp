@@ -27,10 +27,28 @@ body {
 .nav-link.active {
     color: white;
     border-bottom-color:white;
+}
 
+.nav{
+    margin-right: 10%;
+}
+.brand{
+    margin-left: 10%;
 }
 
 .btn-secondary, .btn-secondary:hover{
     color: #333;
     text-shadow: none;
+}
+@media (max-width: 480px) {
+    body{
+        padding:0%
+    }
+    .cover{
+        margin: 0%;
+        padding: 0%;
+    }
+    .brand{
+        margin-left: 0%;
+    }
 }

@@ -1,8 +1,8 @@
 <% layout('/layouts/boilerplate')%>
 
-    <div class="row text-white bg-dark pops">
+    <div class="text-white bg-dark pops">
         <h1 class="text-center">Edit Campground</h1>
-        <div class="col-6 offset-3">
+        
 
             <form action="/campgrounds/<%=Campground._id%>?_method=PUT" method="post" class="needs-validation"
                 novalidate enctype="multipart/form-data">

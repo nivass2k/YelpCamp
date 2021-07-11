@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const cities = require("./indianCities");
 const campground = require("../models/campground");
 const { places, descriptors } = require("./seedhelpers");
-mongoose.connect("mongodb://localhost:27017/yelp-camp", {
+mongoose.connect("mongodb+srv://nivass2k:MongoDb@5445@cluster0.od4fw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
   useUnifiedTopology: true,
   useCreateIndex: true,
   useNewUrlParser: true,
@@ -30,16 +30,16 @@ const seedDB = async () => {
       },
       images:[
         {
-          url: 'https://res.cloudinary.com/nivas-yelpcamp/image/upload/v1625843539/Yelpcamp/wsdf4gzerllwxmzixt6t.jpg',
-          filename: 'Yelpcamp/wsdf4gzerllwxmzixt6t'
+          url: 'https://res.cloudinary.com/nivas-yelpcamp/image/upload/v1625998188/Yelpcamp/zswuzdfyr3pm7zvpdilq.jpg',
+          filename: 'Yelpcamp/wudogyikexbewyhnowxm'
         },
         {
-          url: 'https://res.cloudinary.com/nivas-yelpcamp/image/upload/v1625843541/Yelpcamp/g0vcef5jpgnojpe6fvgt.jpg',
-          filename: 'Yelpcamp/g0vcef5jpgnojpe6fvgt'
+          url: 'https://res.cloudinary.com/nivas-yelpcamp/image/upload/v1625998188/Yelpcamp/zswuzdfyr3pm7zvpdilq.jpg',
+          filename: 'Yelpcamp/zswuzdfyr3pm7zvpdilq'
         }],
       description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt consequatur laborum unde facilis labore, deserunt obcaecati, aut harum fugiat, at alias suscipit. Quis aliquam numquam, voluptatem tempore obcaecati ad earum?',
       price,
-      author:'60e5eac25122a45694c3c15c'
+      author:'60eaca5156b30f04286559c3'
     });
 
     await camp.save();

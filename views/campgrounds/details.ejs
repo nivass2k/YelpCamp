@@ -2,9 +2,9 @@
 <link rel="stylesheet" href="/stylesheets/app.css">
   <link rel="stylesheet" href="/stylesheets/star.css">
   <div class="row">
-    <div class="col-6">
+    <div class="col-md-6">
       
-      <div class="card mb-3 text-white bg-dark">
+      <div class="card shadow mb-3 text-white bg-dark">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <% details.images.forEach((img,i)=>{ %>
@@ -56,17 +56,14 @@
 
       </div>
     </div>
-    <div class="col-6">
-      <div id='map' style='width: 500px; height: 300px;'></div>
+    <div class="col-md-6">
+      <div id='map' ></div>
       <% if(currentUser){%>
-
-        <h2>Leave a Review</h2>
         <form action="/campgrounds/<%=details._id%>/reviews" method="POST" class="needs-validation" novalidate>
           <!-- <label for="rating" class="form-label">Rating</label>
         <input name=review[rating] type="range" class="form-range" min="1" max="5" id="rating" required> -->
-
+<h3>Leave a Review</h3>
           <fieldset class="starability-heart" required>
-            <legend>First rating:</legend>
             <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
               aria-label="No rating." />
             <input type="radio" id="first-rate1" name="review[rating]" value="1" />
@@ -90,7 +87,7 @@
           <% } %>
 
             <% for(let review of details.reviews){%>
-              <div class="card mb-3 review">
+              <div class="card shadow mb-3 review">
                 <div class="card-body">
                   <p class="starability-result" data-rating="<%=review.rating %>">
                     Rated: <%= review.rating %> stars

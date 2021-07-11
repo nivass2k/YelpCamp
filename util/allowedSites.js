@@ -37,7 +37,7 @@ styleSrcUrls = [
         "https://res.cloudinary.com/nivas-yelpcamp/",
         "https://images.unsplash.com",
         "https://img.freepik.com",
-        // "https://cdn.pixabay.com"
+        "https://cdn.pixabay.com"
 
     ],
     fontSrc: ["'self'", ...fontSrcUrls],

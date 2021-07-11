@@ -1,18 +1,47 @@
+html {
+    scroll-behavior: smooth;
+  }
 body{
     background-color: #1a1818;
     color: aliceblue;
 }
 .custom-card{
-   background-color: #212529;
-}
+    background-color: #212529;
+ }
 .pops{
+    
     border-radius: 8%;
     padding: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
+    padding-bottom: 2%;
+    margin-left: 30%;
+    margin-right: 30%;
     margin-bottom: 5%;
 }
 .review{
     width: 80%;
     background-color: #212529;
 }
+#map{
+    width:500px;
+    height:300px;
+}
+@media (max-width: 480px) {
+    #map{
+        width:350px;
+        height:300px;
+    }
+    .pops{
+        padding: 3%;
+        margin: 0%;
+        margin-top: 15%;
+        margin-bottom: 10%;
+    }
+    main{
+        padding: 0%;
+        margin: 0%;
+    }
+    .card{
+        padding: 0%;
+
+    }
+  }
