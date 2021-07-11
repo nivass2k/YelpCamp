@@ -1,6 +1,6 @@
-if(process.env.NODE_ENV!=="production"){
-  require("dotenv").config()
-}
+// if(process.env.NODE_ENV!=="production"){
+//   require("dotenv").config()
+// }
 
 const { renderFile } = require("ejs");
 const { urlencoded } = require("express");
@@ -24,10 +24,9 @@ const users=require('./routes/users');
 
 const User=require('./models/user');
 const helmet = require("helmet");
-const mongoUrl=process.env.DB_URL
 // "mongodb://localhost:27017/yelp-camp"
 
-mongoose.connect(mongoUrl, {
+mongoose.connect(process.env.DB_URL, {
   useUnifiedTopology: true,
   useCreateIndex: true,
   useNewUrlParser: true,
