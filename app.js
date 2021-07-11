@@ -119,6 +119,6 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("campgrounds/error", { err });
 });
 
-app.listen(3000, () => {
-  console.log("Serving on port 3000");
+app.listen(process.env.port||3000, () => {
+  console.log("Serving on port");
 });
