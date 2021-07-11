@@ -1,6 +1,6 @@
-// if(process.env.NODE_ENV!=="production"){
-//   require("dotenv").config()
-// }
+if(process.env.NODE_ENV!=="production"){
+  require("dotenv").config()
+}
 
 const { renderFile } = require("ejs");
 const { urlencoded } = require("express");
