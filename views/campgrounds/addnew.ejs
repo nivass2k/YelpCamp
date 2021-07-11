@@ -1,0 +1,40 @@
+<% layout('/layouts/boilerplate')%>
+
+  <div class="row text-white bg-dark pops">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-6 offset-3">
+      <form action="/campgrounds" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3"> <label class="form-label mb-0" for="name">Title</label>
+          <input class="form-control mb-2" type="text" id="name" name="Campground[title]" required>
+          <div class="invalid-feedback">Oops! You forgot to name it!</div>
+        </div>
+
+        <div class="mb-3"><label class="form-label mb-0" for="place">Location</label>
+          <input class="form-control mb-2" type="text" id="place" name="Campground[location]" required>
+          <div class="invalid-feedback">Oops! You forgot to mention the Location!</div>
+        </div>
+        <div class="mb-3"><label class="form-label mb-0" for="price">Price</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">₹ </span>
+            <input type="number" id="price" name="Campground[price]" class="form-control" required>
+            <div class="invalid-feedback">
+              <p>Uh oh! Enter a valid number</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="mb-3"><label class="form-label mb-0" for="image">Image URL</label>
+          <input class="form-control mb-2" type="text" id="image" name="Campground[image]" required>
+          <div class="invalid-feedback">Provide a URL for the image</div>
+        </div> -->
+        <label class="form-label mb-0" for="image">Add Images</label>
+        <input class="form-control mb-2" type="file" id="image" name="image" multiple>
+        <label class="form-label mb-0" for="descirption">Description</label>
+        <textarea class="form-control mb-2 text-area" type="text" id="description" name="Campground[description]"
+          required></textarea>
+        <div class="invalid-feedback">Give a description of the place</div>
+        <button class="mt-3 btn btn-primary">add campground</button>
+      </form>
+    </div>
+
+  </div>
+  <script src="/javascript/validator.js"></script>

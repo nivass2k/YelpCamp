@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate')%>
+  <link rel="stylesheet" href="stylesheets/login.css">
+  <div class="container-fluid d-flex justify-content-center align-items-center mt-0">
+    <div class="card shadow bg-dark text-white">
+      <img src="https://cdn.pixabay.com/photo/2019/07/25/17/09/camp-4363073_960_720.png" alt="" />
+      <div class="card-body">
+        <h3 class="card-title">Sign up</h3>
+        <form action="/register" method="post" novalidate class="needs-validation">
+          <div class="mb-3"> 
+            <label class="form-label mb-0" for="mail">E-mail</label>
+            <input class="form-control mb-2" type="email" id="mail" name="email" autofocus required>
+            <div class="invalid-feedback">Oops! You forgot to name it!</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label mb-0" for="username">Username</label>
+            <input class="form-control mb-2" type="text" id="username" name="username" required>
+            <div class="invalid-feedback">Oops! You forgot to name it!</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label mb-0" for="password">Password</label>
+            <input class="form-control mb-2" type="password" id="password" name="password" required>
+            <div class="invalid-feedback">Oops! You forgot to name it!</div>
+          </div>
+          <div class="d-grid">
+            <button class="btn btn-success btn-block rounded-pill">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid text-center">
+    <p>Already a user? <a href="/login">Sign in</a></p>
+</div>
+  <script src="/javascript/validator.js"></script>

@@ -1,0 +1,33 @@
+<% layout('/layouts/boilerplate')%>
+<div id="map" style="width:100%; height:500px"></div>
+<h1>All Campgrounds</h1>
+    <% for(let campground of campgrounds){ %>
+        <div class="card mb-3 text-white bg-dark">
+            <div class="row">
+                <div class="col-md-4">
+                    <% if(campground.images.length){ %> 
+                    <img class="img-fluid" src="<%=campground.images[0].url%> " alt="">
+                    <% }else{%> 
+                        <img class="img-fluid" src="https://img.freepik.com/free-vector/camping-hiking-nature-mountain-river-illustration_24519-911.jpg?size=338&ext=jpg" alt="">
+                        <% } %> 
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+               
+                        <h5 class="card-title"><%=campground.title%></h5>
+                        <small class="card-text text-muted"><%=campground.location%></small>
+                        <p class="card-text"><%=campground.description%></p>
+                        <p class="card-text">₹ <%=campground.price%>/night</p>
+                        <a class="btn btn-primary" href="/campgrounds/<%=campground._id%>">view</a>
+                      </div>
+                </div>
+            </div>
+        </div>         
+        <%}%>
+        <script>
+            const campgrounds={features: <%-JSON.stringify(campgrounds)%>}
+            const mapToken='<%-process.env.MAPBOX_TOKEN%>';
+          </script>
+        <script src="/javascript/clusterMap.js"></script>
+
+        

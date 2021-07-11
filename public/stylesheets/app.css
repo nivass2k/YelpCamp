@@ -1,0 +1,18 @@
+body{
+    background-color: #1a1818;
+    color: aliceblue;
+}
+.custom-card{
+   background-color: #212529;
+}
+.pops{
+    border-radius: 8%;
+    padding: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+.review{
+    width: 80%;
+    background-color: #212529;
+}

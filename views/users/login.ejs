@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate')%>
+  <link rel="stylesheet" href="stylesheets/login.css">
+  <div class="container-fluid d-flex justify-content-center align-items-center mt-0">
+    <div class="card shadow bg-dark">
+      <img src="https://cdn.pixabay.com/photo/2019/07/25/17/09/camp-4363073_960_720.png" alt="" />
+      <div class="card-body text-white bg-dark">
+        <h3 class="card-title">Login</h3>
+        <form action="/login" method="POST" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" id="username" name="username" autofocus required>
+            <div class="invalid-feedback">Oops! You forgot to name it!</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="password" required>
+            <div class="invalid-feedback">Oops! You forgot to name it!</div>
+          </div>
+          <div class="d-grid">
+            <button class="btn btn-success btn-block rounded-pill">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid text-center">
+    <p>Not on Yelpcamp? <a href="/register">Sign up</a></p>
+</div>
+  <script src="/javascript/validator.js"></script>
