@@ -17,6 +17,7 @@ const passport=require('passport');
 const LocalStrategy=require('passport-local');
 const mongoSanitize=require('express-mongo-sanitize');
 const MongoStore = require("connect-mongo");
+const Cors = require("cors");
 
 const campgrounds=require('./routes/campgrounds');
 const reviews=require('./routes/reviews');
@@ -43,6 +44,7 @@ app.engine("ejs", ejsMate);
 app.use(morgan("tiny"));
 app.use(flash());
 app.use(mongoSanitize());
+app.use(Cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // const store = new MongoDBStore({

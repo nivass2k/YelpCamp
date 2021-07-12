@@ -5,6 +5,7 @@ scriptSrcUrls = [
     "https://kit.fontawesome.com",
     "https://cdnjs.cloudflare.com",
     "https://cdn.jsdelivr.net",
+    "https://code.jquery.com/",
   ];
 styleSrcUrls = [
     "https://kit-free.fontawesome.com",

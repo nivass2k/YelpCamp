@@ -70,7 +70,17 @@ module.exports.deleteCamp = async (req, res, next) => {
 
 module.exports.updateCamp = async (req, res) => {
   const { id } = req.params;
+  // const CampgroundId = await campground.findById(id);
   const Campground = await campground.findByIdAndUpdate(id, {...req.body.Campground});
+  console.log(Campground.location,req.body.Campground.location)
+  if(Campground.location!=req.body.Campground.location){
+    console.log("here")
+    const geoData=await geoCoder.forwardGeocode({
+      query:req.body.Campground.location,
+      limit:1
+    }).send();
+    Campground.geometry=geoData.body.features[0].geometry;
+  }
   if (!Campground) {
     req.flash("error", "Sorry, Cannot find the campground to edit!");
     return res.redirect("/campgrounds");

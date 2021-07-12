@@ -1,5 +1,10 @@
 <% layout('/layouts/boilerplate')%>
+<link rel="stylesheet" href="/stylesheets/scrollToTop.css">
+<body>
+
+<a id="button"></a>
 <div id="map" style="width:100%; height:500px"></div>
+<a id="back2Top" title="Back to top" href="#">&#10148;</a>
 <h2 class="text-center py-3">Find the Best Campgrounds!</h2>
     <% for(let campground of campgrounds){ %>
         <div class="card mb-3 text-white bg-dark">
@@ -23,11 +28,14 @@
                 </div>
             </div>
         </div>         
-        <%}%>
+        <%}%> 
+</body>
         <script>
             const campgrounds={features: <%-JSON.stringify(campgrounds)%>}
             const mapToken='<%-process.env.MAPBOX_TOKEN%>';
           </script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="/javascript/clusterMap.js"></script>
+        <script src="/javascript/scroll.js"></script>
 
         
