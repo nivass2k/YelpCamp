@@ -61,7 +61,7 @@ app.use(session({
   name:'session',
   secret: process.env.SECRET||'thisisdummysecret',
   resave:false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie:{
     httpOnly:true,
     secure:true,
