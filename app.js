@@ -17,8 +17,9 @@ const passport=require('passport');
 const LocalStrategy=require('passport-local');
 const mongoSanitize=require('express-mongo-sanitize');
 const MongoStore = require("connect-mongo");
-const Cors = require("cors");
 const campground = require("./models/campground");
+const bodyParser = require('body-parser');
+
 
 const campgrounds=require('./routes/campgrounds');
 const reviews=require('./routes/reviews');
@@ -45,7 +46,6 @@ app.engine("ejs", ejsMate);
 app.use(morgan("tiny"));
 app.use(flash());
 app.use(mongoSanitize());
-app.use(Cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // const store = new MongoDBStore({
@@ -65,7 +65,7 @@ app.use(session({
   saveUninitialized: false,
   cookie:{
     httpOnly:true,
-    secure:true,
+    // secure:true,
     expires: Date.now()+1000*60*60*24,
     maxAge: 1000*60*60*24,
   },
@@ -82,7 +82,6 @@ app.use(
       directives: policySites
   })
 );
-
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());

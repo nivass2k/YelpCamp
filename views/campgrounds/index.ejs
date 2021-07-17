@@ -3,18 +3,16 @@
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-       
-<body>
+
 
 <a id="button"></a>
 <div id="map" style="width:100%; height:500px"></div>
 <a id="back2Top" title="Back to top" href="#">&#10148;</a>
-<h2 class="text-center py-3">Find the Best Campgrounds!</h2>
-<div class="text-center ui-widget">
-    <label for="findCamp">Find</label><br />
-    <input id="findCamp">
-    <ul id="foundCamps"></ul>
-</div>
+<h2  class="text-center py-3"><img width="3%" src="/images/whiteSearch.png" alt="" srcset=""> Find the Best Campgrounds!</h2>
+    <div class="mb-3  ui-widget">
+  
+        <input  class="form-control" id="findCamp" placeholder="Search for campgrounds">
+    </div>
 
     <% for(let campground of campgrounds){ %>
         <div class="card mb-3 text-white bg-dark">
@@ -39,7 +37,7 @@
             </div>
         </div>         
         <%}%> 
-</body>
+
         <script>
             const campgrounds={features: <%-JSON.stringify(campgrounds)%>}
             const mapToken='<%-process.env.MAPBOX_TOKEN%>';
@@ -47,26 +45,24 @@
         
         <script src="/javascript/clusterMap.js"></script>
         <script src="/javascript/scroll.js"></script>
-        <script>
-            $(document).ready(function () {
-                $("#findCamp").autocomplete({
-                    source: async function(req, res) {
-                        let data = await fetch(`https://yelpcamp-nivas.herokuapp.com/search?query=${req.term}`)
-                            .then(results => results.json())
-                            .then(results => results.map(result => {
-                                
-                                console.log(result)
-                                return { label: result.title, value: result.title, id: result._id };
-                            }));
-                        res(data);
-                    },
-                    minLength: 2,
-                    select: function(event, ui) {
-                        window.location.replace(`https://yelpcamp-nivas.herokuapp.com/campgrounds/${result._id});
-                    }
-                });
-            });
-        </script>
+<script>
+    $(document).ready(function () {
+        $("#findCamp").autocomplete({
+            source: async function(req, res) {
+                let data = await fetch(`http://localhost:3000/search?term=${req.term}`)
+                    .then(results => results.json())
+                    .then(results => results.map(result => {
+                        return { label: result.title, value: result.title, id: result._id };
+                    }));
+                res(data);
+            },
+            minLength: 2,
+            select: function(event, ui) {
+                window.location.replace(`${window.location.href}/${ui.item.id}`);
+            }
+        });
+    });
+</script>
         
 
         

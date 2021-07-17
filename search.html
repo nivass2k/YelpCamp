@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div class="text-center ui-widget">
+        <label for="findCamp">Find</label><br />
+        <input id="findCamp">
+    </div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $("#findCamp").autocomplete({
+            source: async function(req, res) {
+                let data = await fetch(`http://localhost:3000/campgrounds/search?query=${req.term}`)
+                    .then(results => results.json())
+                    .then(results => results.map(result => {
+                        return { label: result.title, value: result.title, id: result._id };
+                    }));
+                res(data);
+            },
+            minLength: 2,
+            select: function(event, ui) {
+                window.location.replace(`http://localhost:3000/campgrounds/${result._id}`);
+            }
+        });
+    });
+</script>
+</html>
