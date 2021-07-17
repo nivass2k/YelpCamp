@@ -15,6 +15,7 @@ styleSrcUrls = [
     "https://api.tiles.mapbox.com",
     "https://fonts.googleapis.com",
     "https://use.fontawesome.com",
+    "https://code.jquery.com/",
   ];
   connectSrcUrls = [
     "https://api.mapbox.com",

@@ -18,6 +18,7 @@ const LocalStrategy=require('passport-local');
 const mongoSanitize=require('express-mongo-sanitize');
 const MongoStore = require("connect-mongo");
 const Cors = require("cors");
+const campground = require("./models/campground");
 
 const campgrounds=require('./routes/campgrounds');
 const reviews=require('./routes/reviews');
@@ -109,6 +110,27 @@ app.use('/campgrounds/:id/reviews',reviews);
 app.get("/", (req, res) => {
   res.render('home');
 });
+
+app.get("/search",async(req,res)=>{
+  try{
+    let result=await campground.aggregate([
+      {"$search":{
+        "autocomplete":{
+          "query":`${req.query.term}`,
+          "path":"title",
+          "fuzzy":{
+            "maxEdits": 2,
+            "prefixLength": 3
+          }        
+        }}
+      }
+    ])
+    res.send(result);
+  }
+  catch(e){
+    res.status(500).send({message:e.message});
+  }
+})
 
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page not found"));
