@@ -51,7 +51,7 @@
             $(document).ready(function () {
                 $("#findCamp").autocomplete({
                     source: async function(req, res) {
-                        let data = await fetch(`http://localhost:3000/search?query=${req.term}`)
+                        let data = await fetch(`https://yelpcamp-nivas.herokuapp.com/search?query=${req.term}`)
                             .then(results => results.json())
                             .then(results => results.map(result => {
                                 
