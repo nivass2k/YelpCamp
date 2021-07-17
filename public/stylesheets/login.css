@@ -23,4 +23,7 @@ button{
     .navbar,.container-fluid{
         padding-block: 0%;
     }
+    img{
+    display: none;
+    }
 }
