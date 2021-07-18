@@ -1,3 +1,10 @@
+.git{
+    text-decoration: none;
+    color:rgba(255,255,255,0.5);
+}
+.git:hover{
+color: white;
+}
 .card{
     border-radius: 5%;
     width:30%;
@@ -11,18 +18,16 @@
 img{
     border-radius: 5%  
 }
-button{
+.btn-block{
     margin-bottom: 5%;
     margin-top: 5%;
 }
-@media only screen and (max-width:600px){
+@media only screen and (max-width:1000px){
     .card{
         width:80%
-    }
-    .navbar,.container-fluid{
-        padding-block: 0%;
     }
     img{
     display: none;
     }
+    
 }

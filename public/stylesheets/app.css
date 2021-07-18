@@ -25,6 +25,17 @@ body{
     width:500px;
     height:300px;
 }
+.container-fluid{
+    padding-inline: 17%;
+}
+.git{
+    text-decoration: none;
+    color:rgba(255,255,255,0.5);
+}
+.git:hover{
+color: white;
+}
+
 @media (max-width: 480px) {
     #map{
         width:350px;
@@ -42,6 +53,8 @@ body{
     }
     .card{
         padding: 0%;
-
+    }
+    .container-fluid{
+        padding-inline: 4%;
     }
   }
