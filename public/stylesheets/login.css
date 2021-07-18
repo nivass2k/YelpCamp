@@ -22,6 +22,9 @@ img{
     margin-bottom: 5%;
     margin-top: 5%;
 }
+footer{
+    margin-top: auto;
+}
 @media only screen and (max-width:1000px){
     .card{
         width:80%
