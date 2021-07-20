@@ -59,6 +59,9 @@ module.exports.editCamp = async (req, res) => {
 
 module.exports.deleteCamp = async (req, res, next) => {
   const Campground = await campground.findById(req.params.id);
+  Campground.images.forEach((item)=>{
+    cloudinary.uploader.destroy(item.filename)
+  })
   await Campground.remove();
   if (!Campground) {
     req.flash("error", "Sorry, Cannot find the campground to delete!");

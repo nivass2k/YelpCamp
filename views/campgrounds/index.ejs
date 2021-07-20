@@ -19,7 +19,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <% if(campground.images.length){ %> 
-                    <img class="img-fluid" src="<%=campground.images[0].url%> " alt="">
+                        <% splitUrl=campground.images[0].url.split("/upload") %> 
+                    <img class="img-fluid" src="<%=splitUrl[0].concat("/upload/q_50").concat(splitUrl[1])%> " alt="">
                     <% }else{%> 
                         <img class="img-fluid" src="https://img.freepik.com/free-vector/camping-hiking-nature-mountain-river-illustration_24519-911.jpg?size=338&ext=jpg" alt="">
                         <% } %> 

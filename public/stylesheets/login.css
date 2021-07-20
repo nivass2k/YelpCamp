@@ -11,6 +11,9 @@ color: white;
     margin-bottom: 1%;
     margin-top: 5%;
 }
+.register{
+    width:40%
+}
 .card-body{
     border-radius: 5%;
 }
