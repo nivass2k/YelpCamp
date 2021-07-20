@@ -30,11 +30,11 @@ const seedDB = async () => {
       },
       images:[
         {
-          url: 'https://res.cloudinary.com/nivas-yelpcamp/image/upload/v1625998188/Yelpcamp/zswuzdfyr3pm7zvpdilq.jpg',
+          url: 'https://res.cloudinary.com/nivas-yelpcamp/image/upload/v1626532765/Yelpcamp/b912btmzmvkswogft0f6.jpg',
           filename: 'Yelpcamp/wudogyikexbewyhnowxm'
         },
         {
-          url: 'https://res.cloudinary.com/nivas-yelpcamp/image/upload/v1625998188/Yelpcamp/zswuzdfyr3pm7zvpdilq.jpg',
+          url: 'https://res.cloudinary.com/nivas-yelpcamp/image/upload/v1625995832/Yelpcamp/wudogyikexbewyhnowxm.jpg',
           filename: 'Yelpcamp/zswuzdfyr3pm7zvpdilq'
         }],
       description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt consequatur laborum unde facilis labore, deserunt obcaecati, aut harum fugiat, at alias suscipit. Quis aliquam numquam, voluptatem tempore obcaecati ad earum?',

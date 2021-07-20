@@ -2,7 +2,7 @@ html {
     scroll-behavior: smooth;
   }
 body{
-    background-color: #1a1818;
+    background-color: #191a1a;
     color: aliceblue;
 }
 .custom-card{
@@ -26,7 +26,7 @@ body{
     height:300px;
 }
 .container-fluid{
-    padding-inline: 17%;
+    padding-inline: 16%;
 }
 .git{
     text-decoration: none;

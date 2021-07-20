@@ -32,10 +32,11 @@
                         name="Campground[description]"><%=Campground.description%> </textarea>
                 </div>
                 <div class="mb-3">
+                    <label class="form-label">Delete</label><br>
                     <% Campground.images.forEach((img,i)=>{ %>
-                        <label for="check-<%=i%> ">Delete?</label>
+                        <label for="check-<%=i%> ">?</label>
                         <input type="checkbox" name="deleteImages[]" value="<%=img.filename%>" id="check-<%=i%>">
-                        <img src="<%=img.thumbnail%>" class="img-thumbnail" alt="">
+                        <img src="<%=img.thumbnail%>" class="img-thumbnail" alt=""><br>
                         <% }) %>
                 </div>
 <div class="d-grid">
