@@ -1,7 +1,7 @@
 mapboxgl.accessToken = mapToken;
 var map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/dark-v10",
+  style: "mapbox://styles/mapbox/dark-v10?optimize=true",
   center: [77.402892, 23.254688],
   zoom: 4,
 });
@@ -26,6 +26,8 @@ map.on("load", function () {
     id: "clusters",
     type: "circle",
     source: "campgrounds",
+    "minzoom": 3,
+  "maxzoom": 9,
     filter: ["has", "point_count"],
     paint: {
       // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
