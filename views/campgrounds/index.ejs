@@ -17,7 +17,7 @@
     <% for(let campground of campgrounds){ %>
         <div class="card mb-3 text-white bg-dark">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 d-flex">
                     <% if(campground.images.length){ %> 
                         <% splitUrl=campground.images[0].url.split("/upload") %> 
                     <img class="img-fluid" src="<%=splitUrl[0].concat("/upload/q_15").concat(splitUrl[1])%> " alt="">
