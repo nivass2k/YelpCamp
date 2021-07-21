@@ -8,8 +8,9 @@
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <% details.images.forEach((img,i)=>{ %>
+              <% splitUrl=img.url.split("/upload") %> 
               <div class="carousel-item <%= i===0?'active':''%>">
-                <img class="card-img-top" src="<%=img.url%>" class="d-block w-100" alt="">
+                <img class="card-img-top" src="<%=splitUrl[0].concat("/upload/q_50").concat(splitUrl[1])%>" class="d-block w-100" alt="">
               </div>
               <% }) %>
           </div>
