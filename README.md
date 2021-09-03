@@ -1,5 +1,5 @@
 # YelpCamp
-My dark theme version of Colt Steele's Yelp Camp with changed UI and populated with Indian cities datasets. Fixed the bugs with session (due to recent update of connect-mongo)
+My dark themed Yelp Camp populated with Indian cities datasets. Fixed the bugs with session (due to recent update of connect-mongo)
 You might have already come across Colt Steele's Yelp Camp project. If not I am going to describe it anyway please read through to get to know my version of this.
 
 YelpCamp is inspired from yelp.com. YelpCamp is a web Application in which users can find campgrounds and review them. Users can also add their own campgrounds. A map has also 
